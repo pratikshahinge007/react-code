@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./style.css";
+import logo from './logo.svg'
+export default function App() {
+  const [inputData, setInputData] = useState("");
+  const [finalToDoList, setFinalToDoList] = useState([]);
 
-function App() {
+  const onChangeInput = (e) => {
+    setInputData(e.target.value);
+  };
+
+  const addToDoListData = () => {
+    setFinalToDoList([...finalToDoList, inputData]);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      addToDoListData();
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="container">
+      <div id="item">
+        <div id="outer_div">
+          <label htmlFor="input">Input</label>
+          <input
+            id="input"
+            type="text"
+            value={inputData}
+            onChange={onChangeInput}
+            onKeyPress={handleKeyPress}
+            placeholder="Enter a new task"
+          />
+          <button id="add_button" onClick={addToDoListData}>
+            Add
+          </button>
+        </div>
+        <div id="list_data">
+          {finalToDoList?.map((data, id) => {
+            return <div key={id}>{data}</div>;
+          })}
+        </div>
+      </div>
+      <div id="item">
+        <div>to-Do List</div>
+        <div>with JavaScript</div>
+        <img title="React logo" src={logo.svg}/>
+      </div>
     </div>
   );
 }
-
-export default App;

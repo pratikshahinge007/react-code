@@ -1,0 +1,22 @@
+.border-style{
+    border : 0.2px solid grey;
+}
+
+.list-style{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    width: 700px;
+}
+
+.name-style 
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.subdata-style{
+    color: grey;
+}

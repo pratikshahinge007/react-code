@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="container"
+  >
+    <div
+      id="item"
+    >
+      <div
+        id="outer_div"
+      >
+        <label
+          for="input"
+        >
+          Input
+        </label>
+        <input
+          id="input"
+          placeholder="Enter a new task"
+          type="text"
+          value=""
+        />
+        <button
+          id="add_button"
+        >
+          Add
+        </button>
+      </div>
+      <div
+        id="list_data"
+      />
+    </div>
+    <div
+      id="item"
+    >
+      <div>
+        to-Do List
+      </div>
+      <div>
+        with JavaScript
+      </div>
+      <img
+        title="React logo"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
